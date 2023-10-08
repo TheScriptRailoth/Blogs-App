@@ -14,16 +14,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int pageIndex=0;
+  List<String> pageTitles = ["Home", "Favourites", "Profile"];
   final List<Widget>tabs=[HomeScreenWidget(),FavouriteScreen(),ProfileScreen()];
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        title: Text(pageTitles[pageIndex], style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         backgroundColor: Colors.black,
         elevation: 0.0,
       ),
+       drawer: MyDrawer(),
        body: Stack(
          children: [
            tabs.elementAt(pageIndex),
@@ -65,6 +67,96 @@ class _HomeScreenState extends State<HomeScreen> {
            )
          ],
        ),
+    );
+  }
+}
+class MyDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width*0.6,
+      child: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 200,
+              width: MediaQuery.sizeOf(context).width*0.6,
+              child: Image.asset('assets/fast_blog.png', fit: BoxFit.fill,),
+            ),
+            SizedBox(height: 40,),
+            ListTile(
+              textColor: Colors.black,
+              title: Text('Favourites', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              textColor: Colors.black,
+              title: Text('Profile', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              textColor: Colors.black,
+              title: Text('Setting', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              textColor: Colors.black,
+              title: Text('About', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              textColor: Colors.black,
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Log Out', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                  SizedBox(width: 10,),
+                  Icon(Icons.exit_to_app_rounded, color: Colors.black,)
+                ],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            SizedBox(height: 30,),
+             GestureDetector(
+               onTap: (){
+                 if (Scaffold.of(context).isDrawerOpen) {
+                   Navigator.pop(context);
+                 }
+               },
+               child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Stack(
+                        alignment: Alignment.center,
+                        children:[
+                          Container(
+                            height: 35,
+                            width: 35,
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                              borderRadius: BorderRadius.circular(30)
+                            ),
+                          ),
+                          Icon(Icons.arrow_back_rounded, color: Colors.white,)
+                    ]
+                    )
+                  ],
+                ),
+             ),
+          ],
+        ),
+      ),
     );
   }
 }
