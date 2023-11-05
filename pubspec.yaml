@@ -41,7 +41,7 @@ dependencies:
   cached_network_image:
   flutter_widget_from_html_core:
   feather_icons:
-  flutter_screenutil:
+  flutter_screenutil: ^5.9.0
   animation_wrappers:
   flutter:
     sdk: flutter

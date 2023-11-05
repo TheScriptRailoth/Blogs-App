@@ -28,8 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
       body: FadedScaleAnimation(
         child: Center(
           child: Image.asset('assets/images/Quill_logo_with_bg.png',
-          height: 300,
-          width: 350,
+          height: 300.h,
+          width: 350.w,
           ),
         ),
       ),

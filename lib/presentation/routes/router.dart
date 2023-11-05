@@ -8,6 +8,7 @@ class AppRouter extends $AppRouter{
   List<AutoRoute> get routes=> [
     AutoRoute(page: SplashScreenRoute.page, path: "/", initial: true),
     AutoRoute(page: OnBoardScreenRoute.page),
+    AutoRoute(page: AuthRoute.page),
   ];
 
 }
