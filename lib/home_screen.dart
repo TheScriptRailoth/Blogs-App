@@ -1,3 +1,4 @@
+import 'package:blogs_app/core/constants/my_colors.dart';
 import 'package:blogs_app/favourite_screen.dart';
 import 'package:blogs_app/home_screen_widget.dart';
 import 'package:blogs_app/profile_screen.dart';
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(pageTitles[pageIndex], style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.black,
+        backgroundColor: MyColors.primaryColor,
         elevation: 0.0,
       ),
        drawer: MyDrawer(),
