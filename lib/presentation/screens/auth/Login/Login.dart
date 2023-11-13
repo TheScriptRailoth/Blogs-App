@@ -87,9 +87,14 @@ class _LoginState extends State<Login> {
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500
                         ),),
-                        Text(" Sign Up", style: TextStyle(
-                          fontWeight: FontWeight.w700, color: MyColors.primaryColor,fontSize: 14.sp
-                        ),)
+                        GestureDetector(
+                          onTap: (){
+                            AutoRouter.of(context).push(RegisterRoute());
+                          },
+                          child: Text(" Sign Up", style: TextStyle(
+                            fontWeight: FontWeight.w700, color: MyColors.primaryColor,fontSize: 14.sp
+                          ),),
+                        )
                       ],
                     ),
                   ],
