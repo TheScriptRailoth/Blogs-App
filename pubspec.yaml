@@ -43,8 +43,10 @@ dependencies:
   feather_icons:
   flutter_screenutil: ^5.9.0
   animation_wrappers:
+  awesome_bottom_bar:
   flutter:
     sdk: flutter
+
 
 
   # The following adds the Cupertino Icons font to your application.
