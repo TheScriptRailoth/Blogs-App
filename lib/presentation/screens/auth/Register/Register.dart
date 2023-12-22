@@ -74,24 +74,6 @@ class _RegisterState extends State<Register> {
                           prefixIcon: Icon(Icons.lock_outline, color: MyColors.primaryColor,),
                           borderColor: MyColors.primaryColor,
                         ),
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            // Checkbox(
-                            //   value: _isChecked, onChanged:(bool? newValue){
-                            //   setState(() {
-                            //     _isChecked= newValue!;
-                            //   });
-                            // },
-                            //   activeColor: MyColors.primaryColor,
-                            // ),
-                            Text('Remember Me', style: TextStyle(color: MyColors.primaryColor),),
-                            Spacer(),
-                            Text("Forgot Password?", style: TextStyle(color: MyColors.primaryColor),),
-                            SizedBox(width: 15.w,)
-                          ],
-                        ),
                         SizedBox(height: 50.h,),
                         PrimaryButton(title: "Register", onPressed: (){}),
                         SizedBox(height: 20.h,),
